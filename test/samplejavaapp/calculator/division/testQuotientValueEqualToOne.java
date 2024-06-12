@@ -13,10 +13,6 @@ public class testQuotientValueEqualToOne {
     private int dividend;
     private int divisor;
 
-    @BeforeClass
-    public static void beforeClass() throws Exception {
-    }
-
     @Before
     public void setUp() {
         myCalculator = new MyCalculator();
@@ -32,11 +28,7 @@ public class testQuotientValueEqualToOne {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
+        this.myCalculator.close();
     }
-
-    @AfterClass
-    public static void afterClass() throws Exception {
-    }
-
 }

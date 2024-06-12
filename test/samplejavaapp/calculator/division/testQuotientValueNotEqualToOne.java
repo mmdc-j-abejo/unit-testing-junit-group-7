@@ -1,43 +1,37 @@
 package samplejavaapp.calculator.division;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import samplejavaapp.MyCalculator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
-public class testQuotient {
+public class testQuotientValueNotEqualToOne {
     private MyCalculator myCalculator;
     private final String message = "Expected result should be 1";
-    private int expectedResult;
+    private int unexpectedResult;
     private int actualResult;
     private int dividend;
     private int divisor;
 
-    @BeforeClass
-    public static void beforeClass() throws Exception {
-    }
-
     @Before
     public void setUp() {
         myCalculator = new MyCalculator();
-        expectedResult = 1;
-        divisor = 8;
-        dividend = 8;
+        unexpectedResult = 100;
+        divisor = 64;
+        dividend = 64;
         actualResult = myCalculator.DivideFunction(dividend,divisor);
-
     }
 
     @Test
     public void testQuotient() {
-        assertEquals(message,expectedResult,actualResult);
+        assertNotEquals(unexpectedResult,actualResult);
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
+        this.myCalculator.close();
     }
-
-    @AfterClass
-    public static void afterClass() throws Exception {
-     }
-
 }

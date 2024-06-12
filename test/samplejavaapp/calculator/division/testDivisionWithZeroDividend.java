@@ -13,10 +13,6 @@ public class testDivisionWithZeroDividend {
     private int dividend;
     private int divisor;
 
-    @BeforeClass
-    public static void beforeClass() {
-    }
-
     @Before
     public void setUp() {
         myCalculator = new MyCalculator();
@@ -27,7 +23,7 @@ public class testDivisionWithZeroDividend {
     }
 
     @Test
-    public void test() {
+    public void startTest() {
         assertEquals(
                 message,expectedResult,actualResult
         );
@@ -35,10 +31,6 @@ public class testDivisionWithZeroDividend {
 
     @After
     public void tearDown() {
+        this.myCalculator.close();
     }
-
-    @AfterClass
-    public static void afterClass() {
-    }
-
 }
