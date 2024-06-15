@@ -1,4 +1,4 @@
-package samplejavaapp.calculator.addition;
+package samplejavaapp.calculator.subtraction;
 
 import org.junit.After;
 import org.junit.Before;
@@ -7,21 +7,21 @@ import samplejavaapp.MyCalculator;
 
 import static org.junit.Assert.assertEquals;
 
-public class testSum {
+public class testSubtractionWithPositiveAndNegativeNumbers {
     private MyCalculator myCalculator;
-    private final String message = "Expected result should be 30";
+    private final String message = "Expected result should be 70";
     private int expectedResult;
     private int actualResult;
-    private int primaryAddend;
-    private int secondaryAddend;
+    private int minuend;
+    private int subtrahend;
 
     @Before
     public void setUp() {
         myCalculator = new MyCalculator();
-        expectedResult = 30;
-        primaryAddend = 15;
-        secondaryAddend = 15;
-        actualResult = myCalculator.AddFunction(primaryAddend, secondaryAddend);;
+        expectedResult = 70;
+        minuend = 50;
+        subtrahend = -20;
+        actualResult = myCalculator.SubtractFunction(minuend, subtrahend);;
     }
 
     @Test
@@ -36,4 +36,3 @@ public class testSum {
         this.myCalculator.close();
     }
 }
-

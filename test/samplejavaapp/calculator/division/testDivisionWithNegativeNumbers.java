@@ -1,4 +1,4 @@
-package samplejavaapp.calculator.addition;
+package samplejavaapp.calculator.division;
 
 import org.junit.After;
 import org.junit.Before;
@@ -7,21 +7,21 @@ import samplejavaapp.MyCalculator;
 
 import static org.junit.Assert.assertEquals;
 
-public class testSum {
+public class testDivisionWithNegativeNumbers {
     private MyCalculator myCalculator;
-    private final String message = "Expected result should be 30";
+    private final String message = "Expected result should be 5.";
     private int expectedResult;
     private int actualResult;
-    private int primaryAddend;
-    private int secondaryAddend;
+    private int dividend;
+    private int divisor;
 
     @Before
     public void setUp() {
         myCalculator = new MyCalculator();
-        expectedResult = 30;
-        primaryAddend = 15;
-        secondaryAddend = 15;
-        actualResult = myCalculator.AddFunction(primaryAddend, secondaryAddend);;
+        expectedResult = 5;
+        divisor = -5;
+        dividend = -25;
+        actualResult = myCalculator.DivideFunction(dividend,divisor);
     }
 
     @Test
@@ -36,4 +36,3 @@ public class testSum {
         this.myCalculator.close();
     }
 }
-
