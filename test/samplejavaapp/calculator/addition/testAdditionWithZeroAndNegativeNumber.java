@@ -7,9 +7,9 @@ import samplejavaapp.MyCalculator;
 
 import static org.junit.Assert.assertEquals;
 
-public class testSum {
+public class testAdditionWithZeroAndNegativeNumber {
     private MyCalculator myCalculator;
-    private final String message = "Expected result should be 30";
+    private final String message = "Expected result should be -7";
     private int expectedResult;
     private int actualResult;
     private int primaryAddend;
@@ -18,9 +18,9 @@ public class testSum {
     @Before
     public void setUp() {
         myCalculator = new MyCalculator();
-        expectedResult = 30;
-        primaryAddend = 15;
-        secondaryAddend = 15;
+        expectedResult = -7 ;
+        primaryAddend = 0;
+        secondaryAddend = -7;
         actualResult = myCalculator.AddFunction(primaryAddend, secondaryAddend);;
     }
 
@@ -36,4 +36,3 @@ public class testSum {
         this.myCalculator.close();
     }
 }
-
